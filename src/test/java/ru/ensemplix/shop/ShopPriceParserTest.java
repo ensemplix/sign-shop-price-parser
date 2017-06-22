@@ -8,8 +8,13 @@ import static ru.ensemplix.shop.ShopPrice.Result.*;
 public class ShopPriceParserTest {
 
     @Test
-    public void testParseNoPrice() {
+    public void testParseEmptyPrice() {
         assertEquals(NO_PRICE, ShopPriceParser.parse("").getResult());
+    }
+
+    @Test
+    public void testParseNoPrice() {
+        assertEquals(NO_PRICE, ShopPriceParser.parse("10 10").getResult());
     }
 
     @Test

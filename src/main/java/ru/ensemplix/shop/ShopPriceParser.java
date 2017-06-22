@@ -70,6 +70,10 @@ public class ShopPriceParser {
             return new ShopPrice(INCORRECT_PRICE);
         }
 
+        if(sellPrice <= 0 && buyPrice <= 0) {
+            return new ShopPrice(NO_PRICE);
+        }
+
         return new ShopPrice(SUCCESS, buyPrice, sellPrice);
     }
 
